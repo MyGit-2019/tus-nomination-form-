@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUS Executive Board Nomination Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    padding:15px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.1);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.header h1{
+    color:#004080;
+    font-size:28px;
+}
+
+.header h2{
+    color:#444;
+    font-size:20px;
+    margin-top:8px;
+}
+
+.notice{
+    background:#f8f9ff;
+    border-left:4px solid #004080;
+    padding:15px;
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#333;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+    background:#25D366;
+    border:none;
+    color:#fff;
+    padding:16px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#1fb65a;
+}
+
+.footer{
+    margin-top:20px;
+    background:#fff8e6;
+    padding:15px;
+    border-radius:8px;
+    line-height:1.6;
+    font-size:15px;
+}
+
+@media(max-width:600px){
+    .header h1{
+        font-size:24px;
+    }
+
+    .header h2{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Texas Uyghur Society (TUS)</h1>
+        <h2>2026-2028 Executive Board Nomination Form</h2>
+    </div>
+
+    <div class="notice">
+        <strong>Submission Deadline:</strong><br>
+        Sunday, November 1, 2026<br>
+        5:00 PM (Central Time)
+    </div>
+
+    <form onsubmit="sendToWhatsApp(); return false;">
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label>City of Residence</label>
+            <input type="text" id="city" required>
+        </div>
+
+        <div class="form-group">
+            <label>Position of Interest</label>
+            <select id="position" required>
+                <option value="">Select Position</option>
+                <option>Vice President</option>
+                <option>Secretary</option>
+                <option>Treasurer</option>
+                <option>Greater Houston Representative</option>
+                <option>Dallas-Fort Worth Representative</option>
+                <option>Austin Representative</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Relevant Experience</label>
+            <textarea id="experience" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Statement of Interest & Qualifications</label>
+            <textarea id="statement" required></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">
+            Submit via WhatsApp
+        </button>
+
+    </form>
+
+    <div class="footer">
+        <strong>Important Notice:</strong><br>
+        All qualified members are encouraged to participate.
+        We particularly encourage women and young professionals
+        to become involved and contribute their leadership,
+        experience, and talents to the continued growth of our community.
+        <br><br>
+        Respectfully,<br>
+        <strong>Rozi Amin</strong><br>
+        President, Texas Uyghur Society (TUS)
+    </div>
+
+</div>
+
+<script>
+function sendToWhatsApp() {
+
+    let name = document.getElementById("name").value;
+    let city = document.getElementById("city").value;
+    let position = document.getElementById("position").value;
+    let experience = document.getElementById("experience").value;
+    let statement = document.getElementById("statement").value;
+
+    let message =
+`TEXAS UYGHUR SOCIETY (TUS)
+2026-2028 EXECUTIVE BOARD NOMINATION
+
+Full Name:
+${name}
+
+City of Residence:
+${city}
+
+Position of Interest:
+${position}
+
+Relevant Experience:
+${experience}
+
+Statement of Interest & Qualifications:
+${statement}`;
+
+    let phone = "12817952999";
+
+    window.open(
+      "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
+      "_blank"
+    );
+}
+</script>
+
+</body>
+</html>
